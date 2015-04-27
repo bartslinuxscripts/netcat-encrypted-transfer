@@ -11,6 +11,6 @@ powers of netcat and openssl together with this set of tools!
 
  - Usage:
 
-   ./send [ip] [port] [file]                      to send a file.
+   ./send [ip] [port] [file] --- Send a file
 
-   ./receive [port] [file]                     to receive a file.
+   ./receive [port] [file]   --- Receive a file

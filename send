@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+osData=$(uname -a)
+### Check if arguments is 0 ###
+if [[ "$#" < 3  ]] || [[ "$#" > 3 ]]; then
+  ### Output command usage ###
+  echo -e "\033[32mnetcat-encrypted-transfer is a set of tools that allows you to send and receive files with encryption enabled by using netcat and openssl.\033[37m"
+  echo -e "\033[36mCommand usage:"
+  echo "";
+  echo -e "./send [ip] [port] [file]\033[37m"
+  echo "";
+else
+  echo " * Starting netcat - port $2, file $3, to host $1"
+  openssl aes-256-cbc -salt -e < $3 | nc $1 $2
+  echo -e "   \033[32mFile sent.\033[37m"
+fi
